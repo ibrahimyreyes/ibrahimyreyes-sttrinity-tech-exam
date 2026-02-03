@@ -75,9 +75,8 @@ npm run lint
 
 ```bash
 1. Download and extract zip file from Github Actions artifacts
-2. Navigate to the location where you extracted the zip file using cmd
-3. Issue this command: allure generate .\allure-results --clean -o allure-report
-4. Issue this command: npx allure open allure-report
+2. Navigate to the location where you extracted the zip file using CMD
+3. Issue this command: npx allure open allure-report
 ```
 
 ## ℹ️  View Help And Other CLI Options
