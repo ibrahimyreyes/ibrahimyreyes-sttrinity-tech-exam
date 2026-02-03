@@ -1,8 +1,8 @@
 import { APPCONFIG } from 'environments/env-prd';
 import { test, expect } from 'src/hooks/BaseTest';
 
-test.describe('E2E scenario for placing an order with bypass login', { tag: '@E2E' }, () => {
-  test('[T44155]', async ({
+test.describe('E2E scenario for placing an order', { tag: '@E2E' }, () => {
+  test('[TC002]', async ({
     actionUtils,
     randomDataGenerator,
     productPage,
@@ -18,7 +18,6 @@ test.describe('E2E scenario for placing an order with bypass login', { tag: '@E2
     });
 
     await test.step('Add product to cart', async () => {
-      await actionUtils.navigateTo(APPCONFIG.Prd.SauceDemo.App.URL + '/inventory.html');
       await productPage.click_add_to_cart('Sauce Labs Backpack');
       await headerPage.click_addToCartIcon();
     });

@@ -6,7 +6,7 @@ export class HeaderPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.addToCartIcon = page.locator('//a[@data-test="shopping-cart-link"]');
+    this.addToCartIcon = page.locator('//span[@class="shopping_cart_badge"]');
   }
 
   async click_addToCartIcon(): Promise<void> {
@@ -14,5 +14,12 @@ export class HeaderPage {
     await addToCartIcon.waitFor({ state: 'attached' });
     await addToCartIcon.waitFor({ state: 'visible' });
     await addToCartIcon.click();
+  }
+
+  async get_AddTocartIconBadge_elem(): Promise<Locator> {
+    const addToCartIcon = this.addToCartIcon;
+    await addToCartIcon.waitFor({ state: 'attached' });
+    await addToCartIcon.waitFor({ state: 'visible' });
+    return addToCartIcon;
   }
 }
