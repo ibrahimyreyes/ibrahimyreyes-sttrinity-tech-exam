@@ -65,12 +65,6 @@ brew install allure
 allure serve allure-results
 ```
 
-### Run Linting tool
-
-```bash
-npm run lint
-```
-
 ### View Results Locally from Github Actions artifact:
 
 ```bash
@@ -78,7 +72,11 @@ npm run lint
 2. Navigate to the location where you extracted the zip file using CMD
 3. Issue this command: npx allure open allure-report
 ```
+### Run Linting tool
 
+```bash
+npm run lint
+```
 ## ℹ️  View Help And Other CLI Options
 
 ```bash
