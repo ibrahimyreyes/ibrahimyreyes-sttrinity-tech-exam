@@ -37,7 +37,7 @@ npm run test
 Run the test with UI mode:
 
 ```bash
-npx playwright test --ui
+npm run test:ui
 ```
 
 ## 📊 Viewing Test Results
@@ -73,9 +73,14 @@ allure serve allure-results
 4. Issue this command: npx allure open allure-report
 ```
 
-
 ## ℹ️  View Help And Other CLI Options
 
 ```bash
 npx playwright test --help
 ```
+### Run Linting tool
+
+```bash
+npm run lint
+```
+
