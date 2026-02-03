@@ -1,5 +1,5 @@
 import os from 'os';
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig } from '@playwright/test';
 import { config as dotenvConfig } from 'dotenv';
 
 /**
