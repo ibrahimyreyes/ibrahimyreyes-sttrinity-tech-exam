@@ -3,6 +3,7 @@ export interface PageFixtures {
   productPage: import('@pages/ProductPage').ProductPage;
   headerPage: import('@pages/common/HeaderPage').HeaderPage;
   cartPage: import('@pages/CartPage').CartPage;
+  checkOutPage: import('@pages/CheckOutPage').CheckOutPage;
 }
 
 export interface PageType extends PageFixtures {}
