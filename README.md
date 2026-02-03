@@ -64,6 +64,13 @@ brew install allure
 ```bash
 allure serve allure-results
 ```
+
+### Run Linting tool
+
+```bash
+npm run lint
+```
+
 ### View Results Locally from Github Actions artifact:
 
 ```bash
@@ -77,10 +84,5 @@ allure serve allure-results
 
 ```bash
 npx playwright test --help
-```
-### Run Linting tool
-
-```bash
-npm run lint
 ```
 
