@@ -6,7 +6,6 @@ export class LoginPage {
   private readonly passwordTextBox: Locator;
   private readonly logInButton: Locator;
 
-
   constructor(page: Page) {
     this.page = page;
     this.usernameTextBox = page.locator('//input[@data-test="username"]');

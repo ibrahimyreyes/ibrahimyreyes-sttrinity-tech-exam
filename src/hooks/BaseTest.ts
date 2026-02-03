@@ -1,5 +1,6 @@
-import { AuthGenerator } from '@utilities/auth-utils/AuthGenerator';
 import { BrowserContext, Page, expect } from '@playwright/test';
+import { AuthGenerator } from '@utilities/auth-utils/AuthGenerator';
+import { APPCONFIG } from 'environments/env-prd';
 import { test as baseTest } from 'src/fixtures/fixture';
 
 type HookFixture = {
@@ -12,8 +13,8 @@ export const test = baseTest.extend<HookFixture>({
     // This code runs before all tests
     const context = await browser.newContext();
     const page = await context.newPage();
-    const authGenerator = new AuthGenerator(page);
-    await authGenerator.getStorageState(); 
+    const authGenerator = new AuthGenerator(APPCONFIG.Prd.SauceDemo.App.URL, APPCONFIG.Prd.SauceDemo.Credentials.USERNAME, APPCONFIG.Prd.SauceDemo.Credentials.PASSWORD, page);
+    await authGenerator.getStorageState();
     await page.close();
     await use(context);
     await context.close();

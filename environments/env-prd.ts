@@ -13,9 +13,9 @@ export const APPCONFIG = {
       App: {
         URL: 'https://www.saucedemo.com/'
       },
-      Credentials: {  
-        USERNAME: 'standard_user',//process.env.PRD_SAUCEDEMO_USERNAME || '',
-        PASSWORD: 'secret_sauce'//process.env.PRD_SAUCEDEMO_PASSWORD || ''
+      Credentials: {
+        USERNAME: 'standard_user', // process.env.PRD_SAUCEDEMO_USERNAME || '',
+        PASSWORD: 'secret_sauce'// process.env.PRD_SAUCEDEMO_PASSWORD || ''
       }
     }
   }

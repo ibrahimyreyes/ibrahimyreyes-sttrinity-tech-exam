@@ -11,4 +11,4 @@ export interface ActionUtilsType {
   actionUtils: ActionUtils;
 }
 
-export interface HelperType extends TestDataType, ActionUtilsType{}
+export interface HelperType extends TestDataType, ActionUtilsType {}

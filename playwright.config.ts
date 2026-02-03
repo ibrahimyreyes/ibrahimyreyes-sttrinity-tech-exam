@@ -1,7 +1,6 @@
 import os from 'os';
 import { defineConfig, devices } from '@playwright/test';
 import { config as dotenvConfig } from 'dotenv';
-import { Constants } from './src/utilities/constants';
 
 /**
  * Read environment variables from file.
@@ -79,7 +78,7 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         channel: 'chrome',
         testIdAttribute: 'data-test',
-        //userAgent: Constants.AUTOMATION_USER_AGENT,
+        // userAgent: Constants.AUTOMATION_USER_AGENT,
         // Set the storage state here if you have only one user to login.
         storageState: 'auth.json',
         launchOptions: {

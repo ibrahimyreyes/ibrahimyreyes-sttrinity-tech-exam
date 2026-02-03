@@ -1,6 +1,3 @@
-import { AuthGenerator } from '@utilities/auth-utils/AuthGenerator';
-import { LoginPage } from '@pages/LoginPage';
-
 import { test as base, mergeTests } from '@playwright/test';
 import { HelperType } from 'src/fixtures/types/HelperType';
 import { PageType } from 'src/fixtures/types/PageType';
@@ -10,10 +7,22 @@ import { ActionUtils } from 'src/utilities/ActionUtils';
 import { TestDataReader } from 'src/utilities/reader-utils/JsonReader';
 
 // fixtures for page objects
-
 const pageFixtures = base.extend<PageType>({
   loginPage: async ({ page }, use) => {
+    const { LoginPage } = await import('@pages/LoginPage');
     await use(new LoginPage(page));
+  },
+  productPage: async ({ page }, use) => {
+    const { ProductPage } = await import('@pages/ProductPage');
+    await use(new ProductPage(page));
+  },
+  headerPage: async ({ page }, use) => {
+    const { HeaderPage } = await import('@pages/common/HeaderPage');
+    await use(new HeaderPage(page));
+  },
+  cartPage: async ({ page }, use) => {
+    const { CartPage } = await import('@pages/CartPage');
+    await use(new CartPage(page));
   }
 });
 
@@ -35,6 +44,5 @@ export const testDataFixtures = base.extend<HelperType>({
     await use(jsonReader);
   }
 });
-
 
 export const test = mergeTests(pageFixtures, testDataFixtures, actionUtilsFixtures);
