@@ -4,7 +4,6 @@ import { PageType } from 'src/fixtures/types/PageType';
 
 import { RandomDataGenerator } from 'src/helpers/random-data-generator/RandomDataGenerator';
 import { ActionUtils } from 'src/utilities/ActionUtils';
-import { TestDataReader } from 'src/utilities/reader-utils/JsonReader';
 
 // fixtures for page objects
 const pageFixtures = base.extend<PageType>({
@@ -42,10 +41,6 @@ export const testDataFixtures = base.extend<HelperType>({
   randomDataGenerator: async ({}, use) => {
     const dataGenerator = new RandomDataGenerator();
     await use(dataGenerator);
-  },
-  jsonReader: async ({}, use) => {
-    const jsonReader = new TestDataReader();
-    await use(jsonReader);
   }
 });
 
