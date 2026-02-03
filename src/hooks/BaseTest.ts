@@ -2,6 +2,7 @@ import { BrowserContext, Page, expect } from '@playwright/test';
 import { AuthGenerator } from '@utilities/auth-utils/AuthGenerator';
 import { APPCONFIG } from 'environments/env-prd';
 import { test as baseTest } from 'src/fixtures/fixture';
+import * as fs from 'fs';
 
 type HookFixture = {
   context: BrowserContext;
@@ -10,8 +11,14 @@ type HookFixture = {
 
 export const test = baseTest.extend<HookFixture>({
   context: async ({ browser }, use) => {
+    // Check if auth.json exists, if not create it
+    const authFilePath = 'auth.json';
+    if (!fs.existsSync(authFilePath)) {
+        fs.writeFileSync(authFilePath, JSON.stringify({}, null, 2));
+    }
     // This code runs before all tests
     const context = await browser.newContext();
+    
     const page = await context.newPage();
     const authGenerator = new AuthGenerator(APPCONFIG.Prd.SauceDemo.App.URL, APPCONFIG.Prd.SauceDemo.Credentials.USERNAME, APPCONFIG.Prd.SauceDemo.Credentials.PASSWORD, page);
     await authGenerator.getStorageState();

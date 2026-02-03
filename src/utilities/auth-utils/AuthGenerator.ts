@@ -2,6 +2,7 @@ import { LoginPage } from '@pages/LoginPage';
 import { Page } from '@playwright/test';
 import { ActionUtils } from '@utilities/ActionUtils';
 import { test as setup } from 'src/hooks/BaseTest';
+import fs from 'fs';
 
 export class AuthGenerator {
   private loginPage: LoginPage;
