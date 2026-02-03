@@ -75,14 +75,12 @@ export default defineConfig({
       name: 'chrome',
       use: {
         browserName: 'chromium',
-        ...devices['Desktop Chrome'],
         channel: 'chrome',
         testIdAttribute: 'data-test',
-        // userAgent: Constants.AUTOMATION_USER_AGENT,
-        // Set the storage state here if you have only one user to login.
+        viewport: { width: 1920, height: 1032 },
         storageState: 'auth.json',
         launchOptions: {
-          args: ['--use-gl=egl', '--disable-web-security', '--start-maximized', '--no-sandbox', '--disable-blink-features=AutomationControlled',
+          args: ['--use-gl=egl', '--disable-web-security', '--no-sandbox', '--disable-blink-features=AutomationControlled',
             '--disable-dev-shm-usage'],
           headless: process.env.BROWSER_MODE === 'headed' ? false : true
         }
@@ -92,11 +90,11 @@ export default defineConfig({
       name: 'edge',
       use: {
         browserName: 'chromium',
-        ...devices['Desktop Edge'],
         channel: 'msedge',
+        viewport: { width: 1920, height: 1032 },
         storageState: 'auth.json',
         launchOptions: {
-          args: ['--use-gl=egl', '--disable-web-security', '--start-maximized', '--no-sandbox', '--disable-blink-features=AutomationControlled',
+          args: ['--use-gl=egl', '--disable-web-security', '--no-sandbox', '--disable-blink-features=AutomationControlled',
             '--disable-dev-shm-usage'],
           headless: process.env.BROWSER_MODE === 'headed' ? false : true
         }
@@ -106,8 +104,8 @@ export default defineConfig({
       name: 'firefox',
       use: {
         browserName: 'firefox',
-        ...devices['Desktop Firefox'],
         channel: 'firefox',
+        viewport: { width: 1920, height: 1032 },
         storageState: 'auth.json',
         launchOptions: {
           args: ['--disable-web-security'],
@@ -119,7 +117,6 @@ export default defineConfig({
       name: 'webkit',
       use: {
         browserName: 'webkit',
-        ...devices['Desktop Safari'],
         channel: 'webkit',
         viewport: { width: 1920, height: 1032 },
         deviceScaleFactor: 1, // Zoom out by reducing the scale factor
