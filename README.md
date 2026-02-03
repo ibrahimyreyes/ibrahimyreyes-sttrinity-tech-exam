@@ -34,10 +34,10 @@ Run tests:
 npm run test
 ```
 
-Run the test with UI mode:
+Run the test with headed mode:
 
 ```bash
-npm run test:ui
+npm run test:headed
 ```
 
 ## 📊 Viewing Test Results
