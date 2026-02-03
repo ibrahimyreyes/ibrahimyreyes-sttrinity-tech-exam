@@ -23,6 +23,10 @@ const pageFixtures = base.extend<PageType>({
   cartPage: async ({ page }, use) => {
     const { CartPage } = await import('@pages/CartPage');
     await use(new CartPage(page));
+  },
+  checkOutPage: async ({ page }, use) => {
+    const { CheckOutPage } = await import('@pages/CheckOutPage');
+    await use(new CheckOutPage(page));
   }
 });
 
